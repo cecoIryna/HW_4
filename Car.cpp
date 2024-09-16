@@ -30,6 +30,27 @@ Car::~Car()
 	delete[]this->color;
 }
 
+void Car::Input()
+{
+	char buffer[100];
+
+	cout << "Enter model: ";
+	cin >> buffer;
+	SetModel(buffer);
+
+	cout << "Enter color: ";
+	cin >> buffer;
+	SetColor(buffer);
+
+	cout << "Enter year: ";
+	cin >> year;
+
+	cout << "Enter price: ";
+	cin >> price;
+
+	cout << endl;
+}
+
 void Car::Print()
 {
 	cout << "Model: " << this->model << endl;
@@ -39,9 +60,24 @@ void Car::Print()
 	cout << endl;
 }
 
+char* Car::GetModel()
+{
+	return this->model;
+}
+
 char* Car::GetColor()
 {
 	return this->color;
+}
+
+int Car::GetYear()
+{
+	return this->year;
+}
+
+double Car::GetPrice()
+{
+	return this->price;
 }
 
 void Car::SetModel(const char* m)
@@ -54,7 +90,22 @@ void Car::SetModel(const char* m)
 	strcpy_s(this->model, strlen(m) + 1, m);
 }
 
+void Car::SetColor(const char* c)
+{
+	if (this->color != nullptr)
+	{
+		delete[]this->color;
+	}
+	this->color = new char[strlen(c) + 1];
+	strcpy_s(this->color, strlen(c) + 1, c);
+}
+
 void Car::SetYear(int y)
 {
 	this->year = y;
+}
+
+void Car::SetPrice(double pr)
+{
+	this->price = pr;
 }

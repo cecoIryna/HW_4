@@ -24,7 +24,7 @@ public:
 	//modificators
 	void SetModel(const char* m);
 	void SetColor(const char* c);
-	void SetPrice(double p);
+	void SetPrice(double pr);
 	void SetYear(int y);
 };
 

@@ -4,8 +4,10 @@
 
 int main()
 {
-	Car car1("Toyota", "Black", 2000, 5000);
+	Car car1;
+	car1.Input();
+	Car car2;
+	car2.Input();
 	car1.Print();
-	Car car2("Mitsubisi", "Red", 2009, 7000);
 	car2.Print();
 }
