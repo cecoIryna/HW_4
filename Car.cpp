@@ -44,6 +44,16 @@ char* Car::GetColor()
 	return this->color;
 }
 
+void Car::SetModel(const char* m)
+{
+	if (this->model != nullptr)
+	{
+		delete[]this->model;
+	}
+	this->model = new char[strlen(m) + 1];
+	strcpy_s(this->model, strlen(m) + 1, m);
+}
+
 void Car::SetYear(int y)
 {
 	this->year = y;
